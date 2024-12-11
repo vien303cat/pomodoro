@@ -145,8 +145,8 @@ const randColor = (i) => {
       '#333333', // (黑灰)
     ],
   ]
-  const randNum = Math.round(Math.random() * colorArr.length)
-  console.log(colorArr[randNum][i])
+  const randNum = Math.round(Math.random() * (colorArr.length - 1))
+  console.log(i, colorArr[randNum][i])
   return colorArr[randNum][i]
 }
 
