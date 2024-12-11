@@ -5,7 +5,7 @@
         <h1>目前事項 {{ currentText }}</h1>
       </v-col>
       <v-col cols="12">
-        <digit v-for="(data, i) in currentTime" :key="i" :data="data" :color="randColor()"></digit>
+        <digit v-for="(data, i) in currentTime" :key="i" :data="data" :color="randColor(i)"></digit>
       </v-col>
       <v-col cols="12">
         <v-btn
@@ -84,25 +84,70 @@ const finishTimer = () => {
   }
 }
 
-const randColor = () => {
+const randColor = (i) => {
+  // const colorArr = [
+  //   'red',
+  //   'white',
+  //   'blue',
+  //   'green',
+  //   'yellow',
+  //   'pink',
+  //   'lightgray',
+  //   'orange',
+  //   'aqua',
+  //   'purple',
+  //   'lime',
+  //   'crimson',
+  //   'fuchsia',
+  //   'gold',
+  // ]
   const colorArr = [
-    'red',
-    'white',
-    'blue',
-    'green',
-    'yellow',
-    'pink',
-    'lightgray',
-    'orange',
-    'aqua',
-    'purple',
-    'lime',
-    'crimson',
-    'fuchsia',
-    'gold',
+    [
+      '#FF7E5F', // (橙粉)
+      '#FEB47B', // (淺橙)
+      '#FFD89B', // (暖橙)
+      '#FFECDB', // (淡奶)
+      '#FFFFFF', // (純白)
+    ],
+    [
+      '#FF9A9E', // (暖粉)
+      '#FECFEF', // (淺粉)
+      '#FDEB71', // (淡黃)
+      '#F7F9A7', // (檸檬黃)
+      '#FFFFFF', // (純白)
+    ],
+    [
+      '#F3904F', // (橙黃)
+      '#FF6B6B', // (亮粉)
+      '#BC4E9C', // (紫紅)
+      '#6A0572', // (深紫)
+      '#2C2C54', // (午夜藍)
+    ],
+    [
+      '#1A2980', // (深藍)
+      '#26D0CE', // (淺藍綠)
+      '#6A0572', // (深紫)
+      '#000C40', // (黑藍)
+      '#0F2027', // (黑灰)
+    ],
+    [
+      '#00C9FF', // (亮藍)
+      '#92FE9D', // (淺綠)
+      '#FDCB6E', // (橙黃)
+      '#F79D00', // (金橙)
+      '#FF0080', // (玫瑰紅)
+    ],
+    [
+      '#D9D9D9', // (淺灰)
+      '#B3B3B3', // (淡灰)
+      '#8C8C8C', // (中灰)
+      '#666666', // (深灰)
+      '#333333', // (黑灰)
+    ],
   ]
   const randNum = Math.round(Math.random() * colorArr.length)
-  return colorArr[randNum]
+  console.log(colorArr[randNum][i])
+  return colorArr[randNum][i]
 }
 
 const currentTime = computed(() => {
