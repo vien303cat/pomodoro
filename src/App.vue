@@ -11,7 +11,7 @@
       </v-container>
     </v-app-bar>
     <!-- 路由 -->
-    <v-main>
+    <v-main class="me">
       <!--
         slot = 插槽 = 自訂元件內的某部分HTML
         v-solt = "元件插槽提供的可用變數"
@@ -31,3 +31,10 @@
     </v-main>
   </v-app>
 </template>
+
+<style>
+.me {
+  /* background: url('./assets/192846.png') center/cover ; */
+  background: linear-gradient(to left bottom, red, transparent);
+}
+</style>
